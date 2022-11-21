@@ -5,7 +5,7 @@ class Team(models.Model):
     first_name = models.CharField('Nome', max_length=100)
     last_name = models.CharField('Sobrenome', max_length=100)
     designation = models.CharField('Função', max_length=100)
-    # photo = models.ImageField('Foto', upload_to='photos/%Y/%m/%d/')
+    photo = models.ImageField('Foto', upload_to='photos/%Y/%m/%d/')
     facebook_link = models.URLField('Facebook', max_length=100)
     twitter_link = models.URLField('Twitter', max_length=100)
     google_plus_link = models.URLField('Google', max_length=100)
