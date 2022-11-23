@@ -1,5 +1,6 @@
 from django.db import models
 from datetime import datetime
+from ckeditor.fields import RichTextField
 
 # Create your models here.
 class Car(models.Model):
@@ -69,7 +70,7 @@ class Car(models.Model):
     year = models.IntegerField(('Ano'), choices=year_choice)
     condition = models.CharField('Condição', max_length=100)
     price = models.IntegerField('Preço')
-    description = models.TextField('Descrição')
+    description = RichTextField('Descrição')
     car_photo = models.ImageField('foto', upload_to='photos/%d/%m/%Y')
     car_photo_1 = models.ImageField('foto', upload_to='photos/%d/%m/%Y', blank=True)
     car_photo_2 = models.ImageField('foto', upload_to='photos/%d/%m/%Y', blank=True)
