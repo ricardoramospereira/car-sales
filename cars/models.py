@@ -3,7 +3,7 @@ from datetime import datetime
 from ckeditor.fields import RichTextField
 
 ####################test
-from multiselectfield import MultiSelectField
+# from multiselectfield import MultiSelectField
 
 # Create your models here.
 class Car(models.Model):
@@ -85,7 +85,7 @@ class Car(models.Model):
     transmition = models.CharField('Transmissão', max_length=100)
     interior = models.CharField('Interior', max_length=100)
     miles = models.IntegerField('KM')
-    doors = models.IntegerField('Portas', choices=door_choices)
+    doors = models.CharField('Portas', choices=door_choices, max_length=100)
     passengers = models.IntegerField('Passageiros')
     vin_no = models.CharField(max_length=100)
     milage = models.IntegerField('KMs')
@@ -93,3 +93,6 @@ class Car(models.Model):
     no_of_owners = models.CharField('Nº Proprietários', max_length=100)
     is_featured = models.BooleanField('Destaques', default=False)
     created_date = models.DateField('Data de Criação', default=datetime.now, blank=True)
+
+    def __str__(self) -> str:
+        return self.car_title
