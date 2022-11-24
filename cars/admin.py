@@ -11,5 +11,5 @@ class CarAdmin(admin.ModelAdmin):
     thumbnail.short_description = 'Imagem'
     list_display = ('thumbnail', 'car_title', 'color', 'model', 'year', 'fuel_type', 'is_featured')
     list_filter = ('car_title', 'year')
-    search_fields = ('car_title', 'vin_no')
+    search_fields = ('car_title', 'vin_no', 'city')
     list_editable = ('is_featured',)
