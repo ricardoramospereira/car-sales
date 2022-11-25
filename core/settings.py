@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     "cars.apps.CarsConfig",
     #test
     "ckeditor",
+    "django.contrib.humanize",
 ]
 
 MIDDLEWARE = [
