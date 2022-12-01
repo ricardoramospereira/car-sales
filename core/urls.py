@@ -24,5 +24,4 @@ urlpatterns = [
     path("cars/", include("cars.urls")),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
-admin.site.site_header = 'sales cars'
-admin.site.index_title = 'Painel administrativo'
+

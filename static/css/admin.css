@@ -1,0 +1,16 @@
+/* comment */
+#header {
+    background-color: #fff !important;
+    color: #ff0000 !important;
+    box-shadow: 0px 0px 3px 0px #ff0000;
+}
+
+#header a:link, #header a:visited{
+    color: #000 !important
+}
+
+#logout-form button {
+    color: #000 !important;
+}
+
+
