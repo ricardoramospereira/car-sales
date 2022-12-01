@@ -8,9 +8,9 @@
 <div class="sub-banner overview-bgi">
     <div class="container breadcrumb-area">
         <div class="breadcrumb-areas">
-            <h1>Search Results</h1>
+            <h1>Procurar Resultados</h1>
             <ul class="breadcrumbs">
-                <li><a href="index.html">Home</a></li>
+                <li><a href="{% url 'index' %}">Home</a></li>
                 <li class="active">Pesquisa</li>
             </ul>
         </div>
@@ -40,7 +40,7 @@
                                 <select class="selectpicker search-fields" name="city">
                                     <option disabled="disabled" selected="selected">Selecione o Local</option>
                                     {% for city in city_search %}
-                                        <option value="{{ model }}">{{ city }}</option>
+                                        <option value="{{ city }}">{{ city }}</option>
                                     {% endfor %}
                                 </select>
                             </div>
