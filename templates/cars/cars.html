@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 
+{% block title %} | NOSSO ESTOQUE {% endblock %}
 {% block content %}
 
 {% load humanize %}
@@ -79,12 +80,12 @@
                                         </a>
                                     </div>
                                     <ul class="facilities-list clearfix">
-                                        <li>{car.fuel_type}</li>
-                                        <li>{car.mile | intcomma}</li>
-                                        <li>{car.transmission}</li>
-                                        <li>{car.body_style}</li>
-                                        <li>{car.color}</li>
-                                        <li>{car.year}</li>
+                                        <li>{{car.fuel_type}}</li>
+                                        <li>{{car.miles | intcomma }}</li>
+                                        <li>{{car.transmission}}</li>
+                                        <li>{{car.body_style}}</li>
+                                        <li>{{car.color}}</li>
+                                        <li>{{car.year}}</li>
                                     </ul>
                                 </div>
                             </div>
