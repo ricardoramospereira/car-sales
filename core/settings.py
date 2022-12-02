@@ -40,9 +40,18 @@ INSTALLED_APPS = [
     "pages.apps.PagesConfig",
     "cars.apps.CarsConfig",
     "accounts.apps.AccountsConfig",
-    #test
     "ckeditor",
     "django.contrib.humanize",
+    "django.contrib.sites",
+    "allauth",
+    "allauth.account",
+    "allauth.socialaccount",
+
+    # Providers
+    "allauth.socialaccount.providers.facebook",
+    "allauth.socialaccount.providers.google",
+
+
 ]
 
 MIDDLEWARE = [
@@ -134,3 +143,5 @@ from django.contrib.messages import constants as messages
 MESSAGE_TAGS = {
     messages.ERROR: 'danger',
 }
+
+SITE_ID = 1
