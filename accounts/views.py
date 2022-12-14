@@ -59,6 +59,6 @@ def dashboard(request):
 def logout(request):
     if request.method == 'POST':
         auth.logout(request)
-        messages.success(request, 'Você deslogou na sua conta')
+        messages.success(request, 'Você saiu da sua conta')
         return redirect('index')
     return redirect('index')

@@ -2,7 +2,7 @@
 
 {% block title %} {{ single_car.car_title }} {% endblock%}
 {% block content %}
-
+{% load static %}
 {% load humanize %}
 
 <!-- Sub banner start -->
@@ -343,13 +343,21 @@
                         <div class="modal-content">
                           <div class="contact-dealer modal-header">
                             <!-- <h5 class="modal-title" id="inquiryModalLabel">Contact Dealer</h5> -->
-                            <img src="img/logos/logo-black-white.png">
+                            <center><img src="{% static 'img/logos/logo-black-white.png' %}"></center>
                             <button type="button" class="close" data-dismiss="modal">
                               <span>&times;</span>
                             </button>
                           </div>
                           <div class="modal-body">
-                            <form action="#">
+                            <form action="{% url 'inquiry' %}" method="Post">
+                                {% csrf_token %}
+
+                                {% if user.is_authenticated %}
+                                    <input type="hidden" name="user_id" value="{{user.id}}">
+                                {% else %}
+                                    <input type="hidden" name="user_id" value="0">
+                                {% endif %}
+                                <input type="hidden" name="car_id" value="{{single_car.id}}">
                                 <div class="form-group">
                                   <label for="name" class="col-form-label">Olá, Meu nome é</label>
                                   <div class="row">
@@ -371,7 +379,7 @@
                                     </div>
                                 
                                 <div class="form-group">
-                                  <input type="text" name="car_title" class="form-control" value="LAMBORGHINI HURACÁN." readonly>
+                                  <input type="text" name="car_title" class="form-control" value="{{ single_car.car_title }}" readonly>
                                 </div>
                                
                                 <div class="form-group">
@@ -401,10 +409,10 @@
 
                                 <div class="form-group">
                                   <label for="message" class="col-form-label">Adicione comentários</label>
-                                  <textarea name="message" class="form-control" placeholder="Adicione seu comentário aqui (optional)"></textarea>
+                                  <textarea name="message" class="form-control" placeholder="Adicione seu comentário aqui (opcional)"></textarea>
                                 </div>
                                 <hr>
-                                <input type="submit" value="Send" class="btn btn-block btn-danger">
+                                <input type="submit" value="Enviar" class="btn btn-block btn-danger">
                             </form>
                           </div>
                         </div>

@@ -27,6 +27,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+LOGIN_REDIRECT_URL = 'dashboard'
+
 
 # Application definition
 
@@ -40,6 +42,7 @@ INSTALLED_APPS = [
     "pages.apps.PagesConfig",
     "cars.apps.CarsConfig",
     "accounts.apps.AccountsConfig",
+    "contacts.apps.ContactsConfig",
     "ckeditor",
     "django.contrib.humanize",
     "django.contrib.sites",
