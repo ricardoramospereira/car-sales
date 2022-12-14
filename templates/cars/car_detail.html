@@ -27,6 +27,7 @@
                 <div class="car-details-section">
                     <!-- Heading start -->
                     <div class="heading-car clearfix">
+                        {% include 'includes/messages.html' %}
                         <div class="pull-left">
                             <h3>{{ single_car.car_title }}</h3>
                             <h6>
@@ -343,13 +344,13 @@
                         <div class="modal-content">
                           <div class="contact-dealer modal-header">
                             <!-- <h5 class="modal-title" id="inquiryModalLabel">Contact Dealer</h5> -->
-                            <center><img src="{% static 'img/logos/logo-black-white.png' %}"></center>
+                            <img src="{% static 'img/logos/logo-black-white.png' %}">
                             <button type="button" class="close" data-dismiss="modal">
                               <span>&times;</span>
                             </button>
                           </div>
                           <div class="modal-body">
-                            <form action="{% url 'inquiry' %}" method="Post">
+                            <form action="{% url 'inquiry' %}" method="POST">
                                 {% csrf_token %}
 
                                 {% if user.is_authenticated %}
@@ -362,19 +363,21 @@
                                   <label for="name" class="col-form-label">Olá, Meu nome é</label>
                                   <div class="row">
                                     <div class="col">
-                                      <input type="text" name="first_name" class="form-control" placeholder="Nome" required>
+                                      <input type="text" name="first_name" class="form-control" placeholder="Nome" 
+                                      {% if user.is_authenticated %} value="{{user.first_name}}" {% endif %} required>
                                     </div>
                                     <div class="col">
-                                      <input type="text" name="last_name" class="form-control" placeholder="Sobrenome" required>
+                                      <input type="text" name="last_name" class="form-control" placeholder="Sobrenome" 
+                                      {% if user.is_authenticated %} value="{{user.last_name}}" {% endif %} required>
                                     </div>
                                   </div>
                                 </div>
                                   <div class="form-group">
                                       <select class="form-control" id="sel1" name="customer_need">
-                                        <option value="I'm interested in this">Estou interessado nisso</option>
-                                        <option value="I'd like to know your best price for this">Eu gostaria de saber o seu melhor preço para isso</option>
-                                        <option value="I'd like to test drive this">Gostaria de fazer um test drive</option>
-                                        <option value="I'd like a history report for this">Eu gostaria de um relatório de história para isso</option>
+                                        <option value="Estou interessado nisso">Estou interessado nisso</option>
+                                        <option value="Eu gostaria de saber o seu melhor preço para isso">Eu gostaria de saber o seu melhor preço para isso</option>
+                                        <option value="Gostaria de fazer um test drive">Gostaria de fazer um test drive</option>
+                                        <option value="Eu gostaria de um relatório de história para isso">Eu gostaria de um relatório de história para isso</option>
                                       </select>
                                     </div>
                                 
@@ -398,7 +401,8 @@
                                   <div class="row">
                                     <div class="col">
                                         <label for="name" class="col-form-label">Você pode entrar em contato comigo por e-mail em</label>
-                                      <input type="email" name="email" class="form-control" placeholder="Endereço de e-mail" required>
+                                      <input type="email" name="email" class="form-control" placeholder="Endereço de e-mail"
+                                      {% if user.is_authenticated %} value="{{user.email}}" {% endif %} required>
                                     </div>
                                     <div class="col">
                                         <label for="phone" class="col-form-label">ou por telefone em</label>
