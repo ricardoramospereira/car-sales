@@ -4,7 +4,6 @@
 # User authentication
 ## requirements
 * user registration
-* registration confirmation by email
 * Login
 
 # About the project
