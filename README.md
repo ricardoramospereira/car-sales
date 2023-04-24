@@ -8,8 +8,9 @@
 * Login
 
 # About the project
-system aimed at nutritionists for patient control, food control, graph with the patient's evolution.
-Each professional with their profile separate from the others.
+Car Shop with filter by model, location, year, type and price of the vehicle.
+Possibility of login and registration to register the vehicles of interest.
+Sending a direct message to the owner.
 
 # Technologies
 ## Back-end
