@@ -1,5 +1,5 @@
 # car-sales
-[![Bower](https://img.shields.io/bower/l/django)](https://github.com/ricardoramospereira/nutri/blob/main/LICENSE)
+[![Bower](https://img.shields.io/bower/l/django)](https://github.com/ricardoramospereira/car-sales/blob/master/LICENSE)
 
 # User authentication
 ## requirements
