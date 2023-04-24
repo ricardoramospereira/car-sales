@@ -35,9 +35,10 @@ Sending a direct message to the owner.
 # How to run the project
 Requirements = python==3.9.12 | django==4.1.3
 
+
 ```bash
 # clone repository
-git clone https://github.com/ricardoramospereira/nutri.git
+git clone https://github.com/ricardoramospereira/car-sales.git
 
 # install dependencies
 asgiref==3.5.2
